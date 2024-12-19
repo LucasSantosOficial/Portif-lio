@@ -1,0 +1,62 @@
+/* o * seria a variavel global, pega todo o código margin vai tirar
+ todos os espaços padrões das caixas, e realizar um preenchimento interno nela com o pedding*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+/* 
+    como configurar o fundo passo a passo
+
+    background-image: url(./figma/assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; */
+
+/* como configurar o fundo resumido; color, image, repeat, position/size*/
+background: url(./figma/assets/bg-mobile.jpg) no-repeat top center/cover;
+
+}
+
+/* como chamar a fonte inter400 que está no html antes do meta e estilizar*/
+
+body *
+{
+    font-family: 'inter', sans-serif;
+    color: white;
+    text-align: center;
+    
+}
+
+
+#container0 {
+    width: 360px;
+/*borda para vizualizar a caixa, espaços de preenchimento( padding), ou margem (margin)
+    border: 1px solid red;*/
+    margin: auto;
+    margin: 56px auto 0px;
+}
+
+/* 
+    O display:block formata a caixa onde está a foto para poder centralizar com o margin:auto pois estava em line e pela regra do html não dá para centralizar,
+    más eu também poderia usar #profile{ text-align: center;}, pois estou indicando que o pai dele seja center, ou fique no canto (right/direita ou left/esquerda).
+*/
+
+#profile {
+
+padding: 24px;
+}
+
+#profile img {
+display: block;
+width: 112px;
+margin: auto;
+}
+
+#profile p{
+    font-weight: 500;
+    line-height: 24px;
+    }
