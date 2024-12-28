@@ -1,14 +1,37 @@
 /* o * seria a variavel global, pega todo o código margin vai tirar
  todos os espaços padrões das caixas, e realizar um preenchimento interno nela com o pedding*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-/* 
+:root{
+  --text-color: white;
+  --bg-url: url(./figma/assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color:rgba(255, 255, 255, 0.1);
+  --surface-color-hover:rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./figma/assets/moon-stars.svg);
+
+}
+
+.ligth{
+
+  --text-color: black;
+  --bg-url: url(./figma/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color:rgba(0, 0, 0, 0.05);
+  --surface-color-hover:rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./figma/assets/sun.svg);
+
+}
+
+body {
+  /* 
     como configurar o fundo passo a passo
 
     background-image: url(./figma/assets/bg-mobile.jpg);
@@ -16,28 +39,25 @@ body{
     background-position: top center;
     background-size: cover; */
 
-/* como configurar o fundo resumido; color, image, repeat, position/size*/
-background: url(./figma/assets/bg-mobile.jpg) no-repeat top center/cover;
-
+  /* como configurar o fundo resumido; color, image, repeat, position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 /* como chamar a fonte inter400 que está no html antes do meta e estilizar*/
 
-body *
-{
-    font-family: 'inter', sans-serif;
-    color: white;
-    text-align: center;
-    
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+  text-align: center;
 }
 
-
 #container0 {
-    width: 360px;
-/*borda para vizualizar a caixa, espaços de preenchimento( padding), ou margem (margin)
+  width: 360px;
+  /*borda para vizualizar a caixa, espaços de preenchimento( padding), ou margem (margin)
     border: 1px solid red;*/
-    margin: auto;
-    margin: 56px auto 0px;
+  margin: auto;
+  margin: 56px auto 0px;
+  padding: 0 24px;
 }
 
 /* 
@@ -46,17 +66,132 @@ body *
 */
 
 #profile {
-
-padding: 24px;
+  padding: 24px;
 }
 
 #profile img {
-display: block;
-width: 112px;
-margin: auto;
+  display: block;
+  width: 112px;
+  margin: auto;
 }
 
-#profile p{
-    font-weight: 500;
-    line-height: 24px;
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+#button{
+  position: relative;
+  width: 64px;
+  height: 24px;
+  margin: 4px auto;
+}
+
+#button button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*para posicionar algo na mesma linha que outra coisa*/
+  top: 50%; /*utilizado para alinhar o botão na borda*/
+  left: 0;
+  z-index: 1; /*para sobrepor algo, como colocar ele em cima de algo*/
+  transform: translateY(-50%);
+}
+
+.ligth #button button{
+  right: 0;
+  left: initial;
+}
+
+/*borda do botão*/
+#button span{
+  display:block;
+  width: 64px;
+  height: 24px;
+  background: white var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+ 
+}
+
+/*lista*/
+/*UL tem 360px que foram definidos no container0 */
+ul {
+  list-style: none; /*para tirar os pontos da lista*/
+  /*flex-direction: column;/*o UL já é uma lista então esse elemento não faria sentido, 
+       a não ser que eu quisesse colocar em colunas outros conteudos dentro de cada caixa de link*/
+  gap: 16px;/*espaço entre os elementos, as caixas dos links*/
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+ul li a {
+  /*border: 1px solid red; /*coloca bordas*/
+  /*align-items: center;/*para centralizar os itens da caixa horizontalmente*/
+  /*height: 52px;/*para dar altura a caixa*/
+  justify-content: center; /*centraliza o conteudo na página toda verticalmente*/
+  padding: 16px 24px; /*dar o tamanho na caixa*/
+  display: flex; /*os elementos fiquem flexiveis sempre se ajustando, no caso o tamanho da caixa, 
+        sempre tentando se encaixar*/
+        background: var(--surface-color); /*tonalidade do botão sendo 0.1 a transparencia*/
+        border: 1px solid var(--stroker-color); /*tonalidade da borda do botão*/
+        border-radius: 8px; /* arredondamento da borda*/
+        /*-webkit-backdrop-filter: blur(4px); /*serve para der um sombreamento bem fraco no botão 
+        e -webkit-, é um prefixo que se utiliza no safari 9, em alguns browsers vai ser necessário, 
+        dá para consultar no site Can i use */
+        text-decoration: none; /*serve para remover o grifado do texto*/
+        font-weight: 500; /*peso da fonte*/
+        transition-duration: 0.2; 
+        
+}
+
+/*pseudo-selector  aplicamos as espesificações quando passarmos o mouse em cima*/
+ul li a:hover{
+  background: var(--surface-color-hover); /*tonalidade do botão sendo 0.1 a transparencia*/
+  border: 1.5px solid var(--text-color); /*tonalidade da borda do botão*/
+
+}
+
+/*para configurar o alinhamento, posição dos icones*/
+#social-links a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition-duration: 0.2; 
     }
+
+
+#social-links{
+  display: flex; /*para habilitar a opção de usar o gap, para podermos dar espaçamento nos icones*/
+  /*gap: 30px; /* se quiser dar um espaçamento entre os icones */
+  padding: 32px 0; /*espaçamento das bordas (em cima em baixo) */
+  font-size: 24px; /*tamanho dos icones*/
+  justify-content: center; /*para centralizar*/
+  }
+
+  /*pseudo-selector  aplicamos as espesificações quando passarmos o mouse em cima*/
+  /*Na hora de aplicar especificação para cada icone se não chamar o id com # e adicionar o
+   a:hover, as modificações serão para a caixa toda, fazendo isso ela separa icone por icone*/
+
+  #social-links a:hover{
+    background: var(--highlight-color); /*tonalidade do botão sendo 0.1 a transparencia*/
+    border-radius: 50%; /* arredondamento da borda*/
+  
+  }
+
+  footer{
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  footer a{
+    text-decoration: none;
+  }
+  
