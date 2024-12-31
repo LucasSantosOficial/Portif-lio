@@ -19,7 +19,9 @@ Programa exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB. <b
 <br>
 
 <p align="center">
+
   ![finalproject](./figma/assets/finalproject.png)
+
 </p>
 
 ## 🚀 Tecnologias
