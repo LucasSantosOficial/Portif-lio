@@ -20,7 +20,7 @@ Programa exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB. <b
 
 <p align="center">
 
-  ![finalproject](./figma/assets/finalproject.png)
+    <img alt="projeto DevLinks" src="./figma/assets/finalproject.png" width="100%">
 
 </p>
 
