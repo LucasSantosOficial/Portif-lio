@@ -49,12 +49,14 @@ body * {
   font-family: "inter", sans-serif;
   color: var(--text-color);
   text-align: center;
+  
 }
 
 #container0 {
   width: 360px;
   /*borda para vizualizar a caixa, espaços de preenchimento( padding), ou margem (margin)
     border: 1px solid red;*/
+    max-width: 588px;
   margin: auto;
   margin: 56px auto 0px;
   padding: 0 24px;
@@ -104,6 +106,11 @@ body * {
 .ligth #button button{
   right: 0;
   left: initial;
+  /*animation: slide-in 0,2s forwards;*/
+}
+
+#button button:hover{
+  outline: 8px solid var(--highlight-color);
 }
 
 /*borda do botão*/
@@ -194,4 +201,25 @@ ul li a:hover{
   footer a{
     text-decoration: none;
   }
+
+
+  /* media queries 
+
+  @media(min-width: 700px){
+:root {
+  --bg-url: url(./figma/assets/bg-desktop-light.jpg);
+}
+
+  }*/
+
+  /* animação
+  @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to{
+left: 50%;
+    }
+    
+  }*/
   

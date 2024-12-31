@@ -32,7 +32,7 @@ function apagarAcender() {
   }
 }
 
-function onHoverButton(text) {
-  const boxText = document.querySelector("#textoOrientacao");
-  boxText.innerHTML = text;
-}
+//function onHoverButton(text) {
+  //const boxText = document.querySelector("#textoOrientacao");
+  //boxText.innerHTML = text;
+//}
