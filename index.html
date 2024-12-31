@@ -1,53 +1,114 @@
+<!-- (ctrl + K + U) Para comentar no HTML-->
+<!-- (Shift + ALT + F) Para formatar o código-->
+<!-- Digitando (! + tab) o VS já cria o esqueleto do HTML-->
+
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html lang="pt-br" class="">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina Lucas</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="container0">
+      <div id="profile">
+        <img
+          src="./figma/assets/avatar-light.png"
+          alt="foto do lucas sorrindo, de óculos com fundo azul escuro"
+        />
 
-        <div id="profile">
-            <img src="./figma/assets/avatar-light.png" alt="foto do lucas sorrindo, de óculos com fundo azul escuro">
-        
-            <p>@llucaas._18</p>
-        </div>
+        <p>@llucaas._18</p>
+      </div>
 
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/programador-lucas-santos/
+      <div id="button" onclick="apagarAcender()">
+        <button></button> <span></span>
+      </div>
+      
+      <div id="textoOrientacao"> olá</div>
 
-                " target="_blank"> Veja meu Linkedin</a>
-            </li>
+      <ul>
+        <li>
+          <a
+            href="mailto:lucas.santos.contatoempresarial@gmail.com
+                "
+            target="_blank"
+            id="btnEnviarEmail"
+            onmouseover="onHoverButton('Você poderá encaminhar um E-mail.')"
+            >Enviar e-mail</a
+          >
+        </li>
 
-            <li>
-                <a href="https://www.instagram.com/llucaas._18/"target="_blank"> Me conheça no instagram</a>
-            </li>
+        <li>
+          <a
+            href="https://drive.google.com/file/d/19iCumxNEWbFJZii3xjWuLK9FZTcz2H0x/view?usp=drive_link"
+            target="_blank"
+            id="btnMeuCurriculo"
+            onmouseover="onHoverButton('Você poderá vizualizar meu currículo.')"
+          >
+            Meu currículo</a
+          >
+        </li>
 
-            <li>
-                <a href="https://drive.google.com/file/d/19iCumxNEWbFJZii3xjWuLK9FZTcz2H0x/view?usp=drive_link" target="_blank"> Meu currículo</a>
-            </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/programador-lucas-santos/"
+            target="_blank"
+            id="btnMeuLinkedin"
+            onmouseover="onHoverButton('btnMeuLinkedin')"
+          >
+            Veja meu Linkedin</a
+          >
+        </li>
 
-            <li>
-                <a href="https://wa.me/5511998950080"target="_blank"> Meu contato WhatsApp</a>
-            </li>
+        <li>
+          <a
+            href="https://github.com/LucasSantosOficial/Portif-lio
+                "
+            target="_blank"
+            id="btnMeuGithub"
+            onmouseover="onHoverButton('btnMeuGithub')"
+          >
+            Conheça meu Github</a
+          >
+        </li>
+      </ul>
 
-            <li>
-                <a href="mailto:lucas.santos.contatoempresarial@gmail.com
-                " target="_blank">Enviar email</a>
-            </li>
-        </ul>
-
+      <div id="social-links">
+        <a href="//github.com/LucasSantosOficial/Portif-lio" target="_blank"
+          ><ion-icon name="logo-github"></ion-icon
+        ></a>
+        <a href="https://www.youtube.com/@LucasSantos-td8xw" target="_blank"
+          ><ion-icon name="logo-youtube"></ion-icon
+        ></a>
+        <a href="https://wa.me/5511998950080" target="_blank"
+          ><ion-icon name="logo-whatsapp"></ion-icon
+        ></a>
+        <a href="https://www.instagram.com/llucaas._18/" target="_blank"
+          ><ion-icon name="logo-instagram"></ion-icon
+        ></a>
+      </div>
+      <footer>
+        <a>Desenvolvido por Lucas Santos</a>
+      </footer>
     </div>
 
-</body>
-</html> 
+    <!-- extensão para usar icones -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
