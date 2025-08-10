@@ -222,4 +222,29 @@ left: 50%;
     }
     
   }*/
+
+  /* Container do dropdown */
+.dropdown { position: relative; }
+
+/* Menu: só comportamento (sem mexer no visual dos <a>) */
+.dropdown-menu {
+  display: none;
+  margin-top: .6rem;     /* espaço entre o botão e o menu */
+  padding: 0;
+  list-style: none;
+}
+
+/* Espaço entre os itens do dropdown */
+.dropdown-menu li + li { margin-top: .5rem; } /* respiro entre os itens */
+
+/* Quando aberto */
+.dropdown.open .dropdown-menu {
+  display: grid;
+  gap: .5rem;            /* reforça o espaço entre "Gerador..." e "Portfólio" */
+}
+
+/* Gira o chevron quando aberto (opcional) */
+.dropdown.open #btnMeusProjetos ion-icon { transform: rotate(180deg); transition: transform .2s; }
+
+
   

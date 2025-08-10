@@ -36,3 +36,37 @@ function apagarAcender() {
   //const boxText = document.querySelector("#textoOrientacao");
   //boxText.innerHTML = text;
 //}
+
+// Dropdown Meus Projetos com <a> como toggle
+(function () {
+  const dd = document.querySelector('.dropdown');
+  if (!dd) return;
+
+  const toggle = dd.querySelector('#btnMeusProjetos');
+  const menu   = dd.querySelector('.dropdown-menu');
+
+  function close() {
+    dd.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function open() {
+    dd.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  // abre/fecha no clique
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    dd.classList.contains('open') ? close() : open();
+  });
+
+  // fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!dd.contains(e.target)) close();
+  });
+
+  // ESC fecha
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+})();
