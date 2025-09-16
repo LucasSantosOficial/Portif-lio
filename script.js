@@ -28,45 +28,44 @@ function apagarAcender() {
     //se tiver sem light mode, manter a imagem normal
     img.setAttribute("src", "./figma/assets/avatar-light.png");
     img.setAttribute("alt", "TESTE");
-    
   }
 }
 
 //function onHoverButton(text) {
-  //const boxText = document.querySelector("#textoOrientacao");
-  //boxText.innerHTML = text;
+//const boxText = document.querySelector("#textoOrientacao");
+//boxText.innerHTML = text;
 //}
 
 // Dropdown Meus Projetos com <a> como toggle
 (function () {
-  const dd = document.querySelector('.dropdown');
+  const dd = document.querySelector(".dropdown");
   if (!dd) return;
 
-  const toggle = dd.querySelector('#btnMeusProjetos');
-  const menu   = dd.querySelector('.dropdown-menu');
+  const toggle = dd.querySelector("#btnMeusProjetos");
+  const menu = dd.querySelector(".dropdown-menu");
 
   function close() {
-    dd.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+    dd.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
   }
   function open() {
-    dd.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
+    dd.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
   }
 
   // abre/fecha no clique
-  toggle.addEventListener('click', (e) => {
+  toggle.addEventListener("click", (e) => {
     e.preventDefault();
-    dd.classList.contains('open') ? close() : open();
+    dd.classList.contains("open") ? close() : open();
   });
 
   // fecha ao clicar fora
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (!dd.contains(e.target)) close();
   });
 
   // ESC fecha
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
   });
 })();
