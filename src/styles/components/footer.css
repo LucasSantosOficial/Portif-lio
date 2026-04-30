@@ -1,0 +1,48 @@
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  padding: 2rem var(--container-pad);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+}
+
+.site-footer__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.site-footer strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.site-footer__social a {
+  display: inline-flex;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition:
+    color var(--duration-fast),
+    border-color var(--duration-fast),
+    background var(--duration-fast);
+}
+
+.site-footer__social a:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: var(--surface);
+}

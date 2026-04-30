@@ -1,52 +1,121 @@
-<h1 align="center"> DevLinks </h1>
+<div align="center">
 
-<p align="center">
-Programa exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB. <br/>
+# Lucas Santos — Portfólio
 
-</p>
+Site pessoal e portfólio profissional. Construído como SPA estática com **Vite + TypeScript**, deploy automático em **GitHub Pages**.
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
+[**Ver online →**](https://lucassantosoficial.github.io/Portif-lio/)
 
-<p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
-</p>
+![License](https://img.shields.io/badge/license-MIT-49AA26?style=flat-square)
+![TypeScript](https://img.shields.io/badge/typescript-strict-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Deploy](https://img.shields.io/badge/deploy-GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
-<br>
-
-<p align="center">
-    <img alt="projeto DevLinks" src="./figma/assets/finalproject.png" width="100%">
-</p>
-
-## 🚀 Tecnologias
-
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
-- HTML e CSS
-- JavaScript
-- Git e Github
-- Figma
-
-## 💻 Projeto
-
-O DevLinks é um agregador de links para usar como cartão de visitas online.
-
-- [Acesse o projeto finalizado, online](https://lucassantosoficial.github.io/Portif-lio/)
-
-
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/community/file/1187422022288947321). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
-
-## :memo: Licença
-
-Esse projeto está sob a licença MIT.
+</div>
 
 ---
 
+## Stack
 
+- **Vite 5** — bundler moderno, HMR instantâneo, build em milissegundos.
+- **TypeScript** em modo `strict` — segurança de tipos em todas as camadas.
+- **CSS modular** com tokens de design, `@import` e variáveis customizadas (suporte a tema claro/escuro).
+- **Web APIs nativas** — `IntersectionObserver`, `matchMedia`, Canvas 2D, `requestAnimationFrame`.
+- **ESLint + Prettier** com configuração própria.
+- **GitHub Actions** para CI/CD em GitHub Pages.
+
+## Recursos
+
+- Tema claro/escuro persistido em `localStorage` (atalho **T**).
+- Scroll suave com destaque automático da seção ativa.
+- Reveal-on-scroll usando `IntersectionObserver`.
+- Background animado em canvas com partículas conectadas.
+- Cards de projeto com tilt 3D acompanhando o cursor.
+- Efeito de digitação no hero.
+- Glow seguindo o cursor (apenas em pointer fino).
+- SEO completo: OpenGraph, Twitter Cards, JSON-LD `Person`.
+- PWA-ready: `manifest.webmanifest`, ícones e meta `theme-color`.
+- `sitemap.xml` e `robots.txt` configurados.
+- Acessibilidade: `prefers-reduced-motion`, `skip-link`, ARIA, foco visível, navegação por teclado.
+
+## Estrutura
+
+```
+Portif-lio/
+├── public/                  # assets estáticos copiados como estão
+│   ├── figma/assets/        # imagens originais do design
+│   ├── favicon.svg
+│   ├── manifest.webmanifest
+│   ├── robots.txt
+│   └── sitemap.xml
+├── src/
+│   ├── data/                # fonte de verdade dos projetos e skills
+│   ├── modules/             # cada feature isolada
+│   │   ├── background.ts    # canvas com partículas
+│   │   ├── counters.ts      # animação dos números
+│   │   ├── cursor.ts        # glow seguindo o cursor
+│   │   ├── nav.ts           # smooth scroll + seção ativa
+│   │   ├── projects.ts      # render dos cards
+│   │   ├── reveal.ts        # animações ao rolar
+│   │   ├── skills.ts        # render do grid de stack
+│   │   ├── theme.ts         # toggle de tema
+│   │   └── typewriter.ts    # efeito de digitação
+│   ├── styles/              # design system em CSS
+│   │   ├── components/
+│   │   ├── tokens.css       # variáveis (cores, espaços, easing)
+│   │   ├── reset.css
+│   │   ├── base.css
+│   │   ├── animations.css
+│   │   └── main.css         # entry de imports
+│   ├── types/               # tipos compartilhados
+│   └── main.ts              # bootstrap da aplicação
+├── .github/workflows/deploy.yml
+├── index.html
+├── vite.config.ts
+├── tsconfig.json
+├── eslint.config.js
+└── package.json
+```
+
+## Como rodar localmente
+
+> Requer Node 18+ (recomendado 20).
+
+```bash
+npm install
+npm run dev
+```
+
+Abre em `http://localhost:5173`.
+
+## Scripts
+
+| Comando | O que faz |
+|---|---|
+| `npm run dev` | Servidor de desenvolvimento com HMR. |
+| `npm run build` | `tsc --noEmit` + build de produção em `dist/`. |
+| `npm run preview` | Serve a build de produção localmente. |
+| `npm run typecheck` | Verifica tipos sem emitir arquivos. |
+| `npm run lint` | Lint com ESLint. |
+| `npm run format` | Formata o código com Prettier. |
+
+## Deploy
+
+O deploy é automático via GitHub Actions (`.github/workflows/deploy.yml`) sempre que houver push em `master` ou `main`.
+
+Para que funcione, em **Settings → Pages** do repositório, defina:
+
+- **Source**: `GitHub Actions`.
+
+A action faz o build com `npm run build` e publica o conteúdo de `dist/`.
+
+## Personalização
+
+- **Projetos**: edite `src/data/projects.ts`.
+- **Stack**: edite `src/data/skills.ts`.
+- **Cores e tipografia**: edite `src/styles/tokens.css`.
+- **Texto do hero / sobre**: edite `index.html`.
+
+## Licença
+
+MIT — fique à vontade para usar como referência.

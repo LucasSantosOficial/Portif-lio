@@ -1,195 +1,461 @@
-<!-- (ctrl + K + U) Para comentar no HTML-->
-<!-- (Shift + ALT + F) Para formatar o código-->
-<!-- Digitando (! + tab) o VS já cria o esqueleto do HTML-->
-
 <!doctype html>
-<html lang="pt-br" class="">
+<html lang="pt-BR" data-theme="dark">
   <head>
-    <meta property="og:title" content="Portfólio Lucas Santos" />
-    <meta property="og:description" content="Conheça mais o perfil de Lucas" />
+    <meta charset="UTF-8" />
+    <script>
+      document.documentElement.classList.add("js")
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0d14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Lucas Santos — Desenvolvedor Web Full-Stack</title>
+    <meta
+      name="description"
+      content="Portfólio de Lucas Santos: desenvolvedor full-stack focado em soluções web modernas com TypeScript, JavaScript e automações. Projetos, currículo e contato em um só lugar."
+    />
+    <meta
+      name="keywords"
+      content="Lucas Santos, desenvolvedor web, full-stack, front-end, JavaScript, TypeScript, HTML, CSS, portfólio, currículo, programador Brasil"
+    />
+    <meta name="author" content="Lucas Santos" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://lucassantosoficial.github.io/Portif-lio/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Lucas Santos — Portfólio" />
+    <meta property="og:title" content="Lucas Santos — Desenvolvedor Web Full-Stack" />
+    <meta
+      property="og:description"
+      content="Projetos, stack, currículo e canais de contato do desenvolvedor Lucas Santos."
+    />
+    <meta property="og:url" content="https://lucassantosoficial.github.io/Portif-lio/" />
     <meta
       property="og:image"
       content="https://lucassantosoficial.github.io/Portif-lio/figma/assets/finalproject.png"
     />
-    <meta
-      property="og:url"
-      content="https://lucassantosoficial.github.io/Portif-lio/"
-    />
-    <meta property="og:type" content="website" />
+    <meta property="og:image:alt" content="Prévia do portfólio de Lucas Santos" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lucas Santos — Desenvolvedor Web Full-Stack" />
+    <meta
+      name="twitter:description"
+      content="Projetos, stack, currículo e canais de contato do desenvolvedor Lucas Santos."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lucassantosoficial.github.io/Portif-lio/figma/assets/finalproject.png"
+    />
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./figma/assets/avatar.png" />
+
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina Lucas</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lucas Santos",
+        "alternateName": "@llucaas._18",
+        "url": "https://lucassantosoficial.github.io/Portif-lio/",
+        "image": "https://lucassantosoficial.github.io/Portif-lio/figma/assets/avatar.png",
+        "jobTitle": "Desenvolvedor Web Full-Stack",
+        "description": "Desenvolvedor web focado em construir interfaces modernas, automações e ferramentas internas com JavaScript, TypeScript e ecossistema web.",
+        "email": "mailto:lucas.santos.contatoempresarial@gmail.com",
+        "sameAs": [
+          "https://github.com/LucasSantosOficial",
+          "https://www.linkedin.com/in/programador-lucas-santos/",
+          "https://www.youtube.com/@LucasSantos-td8xw",
+          "https://www.instagram.com/llucaas._18/"
+        ],
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Node.js",
+          "React",
+          "Vite",
+          "Git",
+          "Acessibilidade Web",
+          "Automação"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
   <body>
-    <div id="container0">
-      <div id="profile">
-        <img
-          src="./figma/assets/avatar-light.png"
-          alt="foto do lucas sorrindo, de óculos com fundo azul escuro"
-        />
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
-        <p>@llucaas._18</p>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header" data-reveal>
+      <a class="brand" href="#hero" aria-label="Início">
+        <span class="brand__mark">LS</span>
+        <span class="brand__text">Lucas<span>.dev</span></span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          id="theme-toggle"
+          class="icon-button"
+          type="button"
+          aria-label="Alternar tema claro/escuro"
+          aria-pressed="false"
+          title="Alternar tema (T)"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <button
+          id="menu-toggle"
+          class="icon-button menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </header>
 
-      <div id="button" onclick="apagarAcender()">
-        <button></button> <span></span>
-      </div>
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="hero__eyebrow" data-reveal>
+              <span class="status-dot" aria-hidden="true"></span>
+              Disponível para novos projetos
+            </p>
 
-      <div id="textoOrientacao"></div>
+            <h1 id="hero-title" class="hero__title" data-reveal>
+              Olá, eu sou <span class="gradient-text">Lucas Santos</span>.<br />
+              Construo experiências web
+              <span class="typewriter" aria-live="polite">
+                <span id="typewriter-target">modernas</span><span class="caret" aria-hidden="true"></span>
+              </span>
+            </h1>
 
-      <ul>
-        <li>
-          <a
-            href="mailto:lucas.santos.contatoempresarial@gmail.com
-                "
-            target="_blank"
-            id="btnEnviarEmail"
-            onmouseover="onHoverButton('Você poderá encaminhar um E-mail.')"
-            >Enviar e-mail</a
-          >
-        </li>
+            <p class="hero__lead" data-reveal>
+              Desenvolvedor full-stack com foco em interfaces performáticas, automações úteis e
+              ferramentas que economizam tempo de gente real. Aqui você encontra meus projetos,
+              stack e como falar comigo.
+            </p>
 
-        <li>
-          <a
-            href="https://drive.google.com/file/d/15dN95ZberMW-wnGsi9ZmMJTARXpvl6d0/view?usp=drive_link"
-            target="_blank"
-            id="btnMeuCurriculo"
-            onmouseover="onHoverButton('Você poderá vizualizar meu currículo.')"
-          >
-            Meu currículo</a
-          >
-        </li>
-
-        <li>
-          <a
-            href="https://www.linkedin.com/in/programador-lucas-santos/"
-            target="_blank"
-            id="btnMeuLinkedin"
-            onmouseover="onHoverButton('btnMeuLinkedin')"
-          >
-            Veja meu Linkedin</a
-          >
-        </li>
-
-        <li>
-          <a
-            href="https://github.com/LucasSantosOficial/Portif-lio
-                "
-            target="_blank"
-            id="btnMeuGithub"
-            onmouseover="onHoverButton('btnMeuGithub')"
-          >
-            Conheça meu Github</a
-          >
-        </li>
-
-        <li class="dropdown">
-          <!-- usa <a> como os demais botões -->
-          <a
-            href="#"
-            id="btnMeusProjetos"
-            aria-haspopup="true"
-            aria-expanded="false"
-            onmouseover="onHoverButton('Lista dos meus projetos')"
-          >
-            Meus Projetos
-            <ion-icon
-              name="chevron-down-outline"
-              style="margin-left: 0.5rem"
-            ></ion-icon>
-          </a>
-
-          <ul class="dropdown-menu" role="menu" aria-label="Lista de projetos">
-            <li>
+            <div class="hero__cta" data-reveal>
+              <a class="button button--primary" href="#projects">
+                Ver projetos
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
               <a
-                href="https://lucassantosoficial.github.io/Projeto_Emissao_Contratos/"
+                class="button button--ghost"
+                href="https://drive.google.com/file/d/15dN95ZberMW-wnGsi9ZmMJTARXpvl6d0/view?usp=drive_link"
                 target="_blank"
-                >Gerador de contratos</a
+                rel="noopener noreferrer"
               >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/certificados-site/"
-                target="_blank"
-                >Gerador de Certificados</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/Certificado_Corridas/"
-                target="_blank"
-                >Gerador de Certificados/corrida</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/cha-de-panela-site/"
-                target="_blank"
-                >Chá de panela divertido</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/QRCODE/"
-                target="_blank"
-                >Tempo juntos</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/Portif-lio/"
-                target="_blank"
-                >Portfólio</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://lucassantosoficial.github.io/garage_finance/"
-                target="_blank"
-                >Soma mecânica RP</a
-              >
-            </li>
+                Baixar currículo
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12M6 9l6 6 6-6M5 21h14" />
+                </svg>
+              </a>
+            </div>
+
+            <ul class="hero__metrics" data-reveal>
+              <li>
+                <strong data-counter="7">0</strong>
+                <span>Projetos publicados</span>
+              </li>
+              <li>
+                <strong data-counter="3">0</strong>
+                <span>Anos estudando dev</span>
+              </li>
+              <li>
+                <strong data-counter="100" data-suffix="%">0</strong>
+                <span>Foco em qualidade</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__visual" data-reveal>
+            <div class="avatar-card">
+              <div class="avatar-card__halo" aria-hidden="true"></div>
+              <img
+                id="avatar"
+                src="./figma/assets/avatar-light.png"
+                alt="Foto de Lucas Santos sorrindo, usando óculos, com fundo azul escuro."
+                width="320"
+                height="320"
+                loading="eager"
+                decoding="async"
+              />
+              <div class="avatar-card__handle">
+                <span class="avatar-card__handle-dot" aria-hidden="true"></span>
+                @llucaas._18
+              </div>
+            </div>
+
+            <div class="floating-tag floating-tag--1">&lt;/&gt; TypeScript</div>
+            <div class="floating-tag floating-tag--2">UX</div>
+            <div class="floating-tag floating-tag--3">Open&nbsp;Source</div>
+          </div>
+        </div>
+
+        <a class="scroll-hint" href="#about" aria-label="Rolar para a próxima seção">
+          <span></span>
+        </a>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="section section--about" id="about" aria-labelledby="about-title">
+        <div class="section__inner">
+          <header class="section__header" data-reveal>
+            <span class="section__eyebrow">01 / Sobre</span>
+            <h2 id="about-title" class="section__title">
+              Um pouco sobre <span class="gradient-text">quem está por trás do código</span>
+            </h2>
+          </header>
+
+          <div class="about-grid">
+            <article class="about-card" data-reveal>
+              <p>
+                Comecei programando para resolver problemas chatos do dia a dia — gerador de
+                contratos, certificados em massa, ferramentas que automatizam o que ninguém quer
+                fazer manualmente. Foi aí que percebi que código bom é o que devolve
+                <strong>tempo</strong> para as pessoas.
+              </p>
+              <p>
+                Hoje gosto de combinar <strong>front-end caprichado</strong>, automações no
+                back-end e uma pitada de obsessão por detalhes para entregar produtos que parecem
+                simples — mas só parecem.
+              </p>
+            </article>
+
+            <ul class="about-highlights" role="list">
+              <li data-reveal>
+                <span class="about-highlights__icon" aria-hidden="true">⚡</span>
+                <h3>Performance &amp; UX</h3>
+                <p>
+                  Sites leves, acessíveis, com animações que melhoram a experiência sem atrapalhar
+                  a leitura.
+                </p>
+              </li>
+              <li data-reveal>
+                <span class="about-highlights__icon" aria-hidden="true">🧩</span>
+                <h3>Soluções sob medida</h3>
+                <p>
+                  Geradores, dashboards, ferramentas internas — entrego o que resolve, não o que
+                  enche feature.
+                </p>
+              </li>
+              <li data-reveal>
+                <span class="about-highlights__icon" aria-hidden="true">🤝</span>
+                <h3>Comunicação direta</h3>
+                <p>
+                  Aviso prazos, mostro progresso e prefiro fazer a pergunta certa antes de
+                  entregar a coisa errada.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- STACK -->
+      <section class="section section--stack" id="stack" aria-labelledby="stack-title">
+        <div class="section__inner">
+          <header class="section__header" data-reveal>
+            <span class="section__eyebrow">02 / Stack</span>
+            <h2 id="stack-title" class="section__title">
+              Ferramentas que uso <span class="gradient-text">no dia a dia</span>
+            </h2>
+            <p class="section__lead">
+              Foco em tecnologias estáveis, comunidades ativas e ecossistema sólido — nada de
+              moda passageira.
+            </p>
+          </header>
+
+          <ul class="stack-grid" id="stack-grid" role="list" aria-label="Lista de tecnologias">
+            <!-- Preenchido pelo TypeScript -->
           </ul>
-        </li>
-      </ul>
+        </div>
+      </section>
 
-      <div id="social-links">
-        <a href="//github.com/LucasSantosOficial/Portif-lio" target="_blank"
-          ><ion-icon name="logo-github"></ion-icon
-        ></a>
-        <a href="https://www.youtube.com/@LucasSantos-td8xw" target="_blank"
-          ><ion-icon name="logo-youtube"></ion-icon
-        ></a>
-        <a href="https://wa.me/5511998950080" target="_blank"
-          ><ion-icon name="logo-whatsapp"></ion-icon
-        ></a>
-        <a href="https://www.instagram.com/llucaas._18/" target="_blank"
-          ><ion-icon name="logo-instagram"></ion-icon
-        ></a>
+      <!-- PROJETOS -->
+      <section class="section section--projects" id="projects" aria-labelledby="projects-title">
+        <div class="section__inner">
+          <header class="section__header" data-reveal>
+            <span class="section__eyebrow">03 / Projetos</span>
+            <h2 id="projects-title" class="section__title">
+              Coisas que <span class="gradient-text">construí e publiquei</span>
+            </h2>
+            <p class="section__lead">
+              Cada projeto resolve um problema específico. Clique no card para abrir.
+            </p>
+          </header>
+
+          <div
+            class="projects-grid"
+            id="projects-grid"
+            role="list"
+            aria-label="Lista de projetos"
+          >
+            <!-- Preenchido pelo TypeScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+        <div class="section__inner">
+          <header class="section__header" data-reveal>
+            <span class="section__eyebrow">04 / Contato</span>
+            <h2 id="contact-title" class="section__title">
+              Vamos <span class="gradient-text">construir algo juntos</span>?
+            </h2>
+            <p class="section__lead">
+              Clique no canal preferido — respondo em até 24 horas em dias úteis.
+            </p>
+          </header>
+
+          <div class="contact-grid" data-reveal>
+            <a
+              class="contact-card"
+              href="mailto:lucas.santos.contatoempresarial@gmail.com"
+              aria-label="Enviar e-mail"
+            >
+              <span class="contact-card__icon" aria-hidden="true">✉️</span>
+              <strong>E-mail</strong>
+              <span class="contact-card__value">lucas.santos.contatoempresarial@gmail.com</span>
+            </a>
+
+            <a
+              class="contact-card"
+              href="https://www.linkedin.com/in/programador-lucas-santos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir LinkedIn"
+            >
+              <span class="contact-card__icon" aria-hidden="true">in</span>
+              <strong>LinkedIn</strong>
+              <span class="contact-card__value">/in/programador-lucas-santos</span>
+            </a>
+
+            <a
+              class="contact-card"
+              href="https://github.com/LucasSantosOficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir GitHub"
+            >
+              <span class="contact-card__icon" aria-hidden="true">{ }</span>
+              <strong>GitHub</strong>
+              <span class="contact-card__value">@LucasSantosOficial</span>
+            </a>
+
+            <a
+              class="contact-card"
+              href="https://wa.me/5511998950080"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir WhatsApp"
+            >
+              <span class="contact-card__icon" aria-hidden="true">💬</span>
+              <strong>WhatsApp</strong>
+              <span class="contact-card__value">+55 11 99895-0080</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>
+          © <span id="year"></span> · Feito com <span aria-label="código">{ }</span> e café por
+          <strong>Lucas Santos</strong>.
+        </p>
+        <ul class="site-footer__social" aria-label="Redes sociais">
+          <li>
+            <a
+              href="https://github.com/LucasSantosOficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/programador-lucas-santos/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@LucasSantos-td8xw"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/llucaas._18/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              >Instagram</a
+            >
+          </li>
+        </ul>
       </div>
-      <footer>
-        <a>Desenvolvido por Lucas Santos</a>
-      </footer>
-    </div>
+    </footer>
 
-    <!-- extensão para usar icones -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="./script.js"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

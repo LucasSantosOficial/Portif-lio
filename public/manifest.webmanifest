@@ -1,0 +1,25 @@
+{
+  "name": "Lucas Santos — Portfólio",
+  "short_name": "Lucas.dev",
+  "description": "Portfólio profissional de Lucas Santos — desenvolvedor web full-stack.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./figma/assets/avatar.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
