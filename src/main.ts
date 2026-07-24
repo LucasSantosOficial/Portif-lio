@@ -3,6 +3,7 @@ import { initReveal } from "@/modules/reveal"
 import { initTypewriter } from "@/modules/typewriter"
 import { initNav } from "@/modules/nav"
 import { renderProjects } from "@/modules/projects"
+import { renderExperience } from "@/modules/experience"
 import { renderSkills } from "@/modules/skills"
 import { initCounters } from "@/modules/counters"
 import { initCursorGlow } from "@/modules/cursor"
@@ -16,6 +17,7 @@ function setYear() {
 function boot() {
   initTheme()
   renderSkills()
+  renderExperience()
   renderProjects()
   initNav()
   initTypewriter()
