@@ -1,4 +1,5 @@
 import { skills } from "@/data/skills"
+import { escapeHtml } from "@/modules/escape"
 
 export function renderSkills() {
   const grid = document.getElementById("stack-grid")
@@ -15,9 +16,9 @@ export function renderSkills() {
     item.setAttribute("role", "listitem")
 
     item.innerHTML = `
-      <span class="skill-chip__glyph" aria-hidden="true">${skill.glyph}</span>
-      <span class="skill-chip__name">${skill.name}</span>
-      <span class="skill-chip__meta">${skill.category} · ${skill.level}</span>
+      <span class="skill-chip__glyph" aria-hidden="true">${escapeHtml(skill.glyph)}</span>
+      <span class="skill-chip__name">${escapeHtml(skill.name)}</span>
+      <span class="skill-chip__meta">${escapeHtml(skill.category)} · ${escapeHtml(skill.level)}</span>
     `
 
     fragment.appendChild(item)

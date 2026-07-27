@@ -49,39 +49,25 @@ export const experience: ExperienceCase[] = [
   {
     id: "painel-cobrancas",
     title: "Painel de Cobranças",
-    subtitle: "Disparo ativo, campanhas, templates e histórico",
+    subtitle: "Templates, histórico e modal de campanha",
     company: "Sirius Development",
-    period: "Dez / 2025 — Abr / 2026",
-    role: "Front-end das telas principais do produto",
+    period: "Abr / 2026",
+    role: "Front-end do produto",
     summary:
-      "Construí as telas centrais do produto de cobrança: disparo ativo, criação de campanhas, editor de templates e histórico de envios — do roteamento à integração com a API.",
+      "Primeira entrega no produto: reformulei o histórico de envios, a criação e listagem de templates de mensagem e o modal de criação de campanha.",
     problem:
-      "O produto precisava sair de um back-end funcional para uma interface que o time de cobrança conseguisse operar sozinho, sem depender de chamada no banco ou de suporte técnico para cada disparo.",
+      "As telas de template e histórico existiam, mas o time de cobrança ainda esbarrava em fluxos truncados — criar um template exigia idas e vindas, e o histórico não respondia bem à pergunta 'o que foi disparado e para quem'.",
     solution:
-      "Entreguei as páginas em sequência ao longo de quatro sprints, cada uma como um PR revisado: rotas e disparo ativo, histórico, criação e listagem de templates, página de campanhas e o modal de campanha. Depois voltei para as correções de sprint e ajustes de fluxo apontados em uso real.",
+      "Peguei o front dessas telas e ajustei o fluxo ponta a ponta: listagem e criação de templates, histórico revisado e o modal de campanha, integrando com a API e o estado da aplicação.",
     highlights: [
-      "Página de disparo ativo, incluindo a criação das rotas do front.",
-      "Editor de criação e listagem de templates de mensagem.",
-      "Página de campanhas com modal de criação.",
-      "Histórico de envios com filtros para auditoria do que foi disparado.",
-      "Duas rodadas de correções detalhadas pós-sprint, a partir de feedback de uso.",
+      "Criação e listagem de templates de mensagem.",
+      "Histórico de envios revisado, para auditoria do que foi disparado.",
+      "Modal de criação de campanha.",
     ],
     stack: ["React", "TypeScript", "Vite", "Chakra UI", "React Query", "Socket.io-client"],
     links: [
       {
-        label: "PR #9 · Disparo ativo",
-        url: "https://github.com/SiriusDevelopment-SDA/project-charge/pull/9",
-        kind: "pr",
-        restricted: true,
-      },
-      {
-        label: "PR #38 · Campanhas",
-        url: "https://github.com/SiriusDevelopment-SDA/project-charge/pull/38",
-        kind: "pr",
-        restricted: true,
-      },
-      {
-        label: "PR #67 · Templates e histórico",
+        label: "PR #67 · Templates, histórico e campanha",
         url: "https://github.com/SiriusDevelopment-SDA/project-charge/pull/67",
         kind: "pr",
         restricted: true,

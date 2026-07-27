@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects"
+import { escapeHtml } from "@/modules/escape"
 
 export function renderProjects() {
   const grid = document.getElementById("projects-grid")
@@ -24,10 +25,10 @@ export function renderProjects() {
           <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg>
         </span>
       </div>
-      <h3 class="project-card__title">${project.title}</h3>
-      <p class="project-card__desc">${project.description}</p>
+      <h3 class="project-card__title">${escapeHtml(project.title)}</h3>
+      <p class="project-card__desc">${escapeHtml(project.description)}</p>
       <ul class="project-card__tags" role="list">
-        ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
+        ${project.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")}
       </ul>
     `
 
